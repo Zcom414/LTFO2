@@ -1,0 +1,120 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: "Fira Code", monospace;
+}
+
+.vid-container{
+    position: relative;
+    margin: 1em;
+}
+
+.yellow{
+    color: var(--moutard-color)
+}
+
+.red{
+    color: var(--red-color)
+}
+
+.center{
+    align-items: center;
+    justify-content: center;
+}
+
+.title{
+    font-size: 2em;
+}
+
+
+/***********************************************************************************************/
+                                        /* BODY */
+/***********************************************************************************************/
+body{
+    background-color: black;
+
+}
+
+.catch-phrase{
+    color: var(--white-color);
+    font-size: 2em;
+    justify-content: center;
+    left: 25%;
+    position: absolute;
+    text-align: center; 
+    top: 8%;
+}
+
+.red span{
+    font-size: 5em;
+}
+
+.video-bg{
+    object-fit: cover;
+    width: 100%;
+}
+
+/*Main*/
+/***********************************************************************************************/
+
+
+
+/* CARDS */
+/***********************************************************************************************/
+
+.descrip-card{
+    text-align: center;
+    font-size: 1.6rem;
+    max-width: 100%;
+    margin-top: 2em;
+}
+
+.video-card{
+    color: var(--white-color);
+    font-size: 1.6rem;
+    max-width: 100%;
+    margin-top: 2em;
+    text-align: center
+}
+
+iframe{
+    margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
+}
+/***********************************************************************************************/
+                                        /* FOOTER */
+/***********************************************************************************************/
+
+.compagny{
+    color: var(--white-color); 
+    margin-top: 3em;
+   text-align: center;
+}
+
+.compagny img{
+    margin-bottom: 1rem;
+    width: 20%;
+}
+
+/*Background modif*/
+/***********************************************************************************************/
+
+@media (min-width: 651px) {
+/* Styles spécifiques aux écrans de taille plus grande */
+    header img {
+        width: 40%;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    #icons {
+        display: none; 
+    }
+}

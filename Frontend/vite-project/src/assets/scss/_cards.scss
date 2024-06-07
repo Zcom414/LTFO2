@@ -1,0 +1,84 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Fira Code";
+}
+
+body{
+    background-color: black;
+    color: white;
+    display: flex;
+    width: auto
+}
+
+.card{
+    background-color: black;
+    border-style:solid;
+    box-sizing: content-box;
+    margin-top: -0.5em;
+    overflow: hidden;  
+   
+}
+
+.top{
+    background-color: white;
+    border-top-right-radius: 0.5rem ;
+    color: black;
+    margin-bottom: 0.2rem;
+    padding-top: 0.2rem;
+    padding-left: 0.2rem;
+    width: 70%;
+}
+
+.middle{
+    width: auto;
+    box-sizing: content-box; 
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 2rem; 
+    padding-bottom: 1em;
+    padding-top: 1em;
+    border-top: 0.2rem solid white; 
+    border-radius: 0.5rem;
+}
+
+.middle img{
+    width: 100%;
+}
+
+h3{
+    font-size: 0.7rem;
+    color: #E4C205;
+}
+
+.end{
+    border-top: 0.2rem solid white; 
+    border-radius: 0.5rem;
+    margin-bottom: 1em;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.end p{
+    margin-bottom: 1em;
+    margin-top: 1rem;
+}
+
+.end-arrow{
+    content: "\003E";
+    color: white
+}
+
+.red{
+    color: red;
+    font-size: 2em;
+}
+
+.container{
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: left;
+}

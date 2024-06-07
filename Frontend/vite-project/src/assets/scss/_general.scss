@@ -1,0 +1,54 @@
+@import "fonts.scss";
+
+/*Margin*/
+
+.mt-15{
+    margin-top: 15%;
+}
+
+.mt-demi{
+    margin-top: 1.5em;
+}
+
+.mbt-demi{
+    margin-bottom: 1.5em;
+}
+/*Display*/
+
+.flex{
+    display: flex;
+}
+
+.block{
+    display: block;
+}
+
+.flex-wr{
+    display: flex;
+    flex-wrap: wrap ;
+}
+
+/*Position an pposition-display*/
+
+.spc-ard{
+    justify-content: space-around;
+}
+
+.center{
+    justify-content: center;
+    align-items: center;
+}
+
+/*Container*/
+.container{
+    color: var(--white-color);
+    margin-right: 1em;
+    margin-left: 1em;
+    text-align: center;
+}
+
+//Width
+
+.w-tel{
+    width : 13em
+  }

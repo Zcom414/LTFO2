@@ -1,0 +1,580 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Fira Code";
+}
+
+body {
+  background-color: black;
+  color: white;
+  display: flex;
+  width: auto;
+}
+
+.card {
+  background-color: black;
+  border-style: solid;
+  box-sizing: content-box;
+  margin-top: -0.5em;
+  overflow: hidden;
+}
+
+.top {
+  background-color: white;
+  border-top-right-radius: 0.5rem;
+  color: black;
+  margin-bottom: 0.2rem;
+  padding-top: 0.2rem;
+  padding-left: 0.2rem;
+  width: 70%;
+}
+
+.middle {
+  width: auto;
+  box-sizing: content-box;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 2rem;
+  padding-bottom: 1em;
+  padding-top: 1em;
+  border-top: 0.2rem solid white;
+  border-radius: 0.5rem;
+}
+
+.middle img {
+  width: 100%;
+}
+
+h3 {
+  font-size: 0.7rem;
+  color: #E4C205;
+}
+
+.end {
+  border-top: 0.2rem solid white;
+  border-radius: 0.5rem;
+  margin-bottom: 1em;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.end p {
+  margin-bottom: 1em;
+  margin-top: 1rem;
+}
+
+.end-arrow {
+  content: ">";
+  color: white;
+}
+
+.red {
+  color: red;
+  font-size: 2em;
+}
+
+.container {
+  padding-left: 10%;
+  padding-right: 10%;
+  text-align: left;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Fira Code", monospace;
+}
+
+.vid-container {
+  position: relative;
+  margin: 1em;
+}
+
+.yellow {
+  color: var(--moutard-color);
+}
+
+.red {
+  color: var(--red-color);
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 2em;
+}
+
+/***********************************************************************************************/
+/* BODY */
+/***********************************************************************************************/
+body {
+  background-color: black;
+}
+
+.catch-phrase {
+  color: var(--white-color);
+  font-size: 2em;
+  justify-content: center;
+  left: 25%;
+  position: absolute;
+  text-align: center;
+  top: 8%;
+}
+
+.red span {
+  font-size: 5em;
+}
+
+.video-bg {
+  object-fit: cover;
+  width: 100%;
+}
+
+/*Main*/
+/***********************************************************************************************/
+/* CARDS */
+/***********************************************************************************************/
+.descrip-card {
+  text-align: center;
+  font-size: 1.6rem;
+  max-width: 100%;
+  margin-top: 2em;
+}
+
+.video-card {
+  color: var(--white-color);
+  font-size: 1.6rem;
+  max-width: 100%;
+  margin-top: 2em;
+  text-align: center;
+}
+
+iframe {
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+
+/***********************************************************************************************/
+/* FOOTER */
+/***********************************************************************************************/
+.compagny {
+  color: var(--white-color);
+  margin-top: 3em;
+  text-align: center;
+}
+
+.compagny img {
+  margin-bottom: 1rem;
+  width: 20%;
+}
+
+/*Background modif*/
+/***********************************************************************************************/
+@media (min-width: 651px) {
+  /* Styles spécifiques aux écrans de taille plus grande */
+  header img {
+    width: 40%;
+  }
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+  }
+  #icons {
+    display: none;
+  }
+}
+:root {
+  --red-color: #ab2222f0;
+  --white-color: #ffffff;
+  --moutard-color: #ffc400;
+  --red-transparent: rgba(165, 1, 1, 0.5)
+  --black-color: rgba(0, 0, 0, 0.8) ;
+}
+
+/***********************************************************************************************/
+/* HEADER */
+/***********************************************************************************************/
+.main-nav-outer {
+  align-items: center;
+  background-color: rgb(165, 1, 1);
+  display: block;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+.small-logo {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 0;
+}
+
+.main-nav {
+  display: none;
+}
+
+.main-nav li {
+  display: block;
+  margin: 0;
+}
+
+.main-nav li a {
+  display: block;
+  color: rgb(245, 238, 238);
+  text-transform: uppercase;
+  font-family: "Josefin Sans", sans-serif;
+  text-decoration: none;
+  text-align: center;
+  line-height: 2rem;
+  margin: 1.8rem 3.25rem;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  font-size: 1.6rem;
+  padding: 0.5em;
+}
+
+.main-nav li a:hover {
+  outline: 0;
+  color: #FFC300;
+  text-decoration: underline;
+  transform: translateY(-0.5em);
+}
+
+.logo {
+  margin-top: 3.5%;
+  width: 35%;
+}
+
+.main-nav li {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+/* Menu burger */
+#icons {
+  font-size: 2em;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+#icons::before {
+  content: "☰";
+  color: rgba(8, 8, 8, 0.8);
+}
+
+.active #icons::before {
+  content: "⤫";
+  color: rgba(8, 8, 8, 0.8);
+}
+
+.main-nav {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.main-nav.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+#nav.active {
+  display: block;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.intro {
+  margin-left: 1em;
+  margin-bottom: 2em;
+  margin-top: 6.6em;
+}
+
+.intro h1 {
+  margin-bottom: 1rem;
+}
+
+.cards-position {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.title-article {
+  font-size: 1.5em;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+@font-face {
+  font-family: "Share Tech Mono";
+  src: url("../../fonts/ShareTechMono-Regular.ttf");
+}
+@font-face {
+  font-family: "Fira Code";
+  src: url("../../fonts/FiraCode-VF.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+.dashboard-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.drawer-side-2 {
+  background-color: rgba(96, 163, 188, 0);
+  overflow-y: auto; /* Permet le scrolling si nécessaire */
+  border-right: 1px solid #ccc;
+  display: block; /* Masqué par défaut */
+  transition: transform 0.3s ease-in-out;
+}
+
+.drawer-content-2 {
+  flex-grow: 1;
+  padding: 2em;
+}
+
+.menu-drawer-2 {
+  list-style: none;
+  padding: 2em;
+}
+
+.menu-drawer-2 li a {
+  font-size: 1em;
+  display: block;
+  margin-bottom: 1rem;
+  color: #333;
+  text-decoration: none;
+  border-radius: 0.05em;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.menu-drawer-2 li a:hover {
+  background-color: #ccc;
+}
+
+.content-fsize {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.back-blue {
+  background-color: #FFC300;
+  border-radius: 2em;
+}
+
+#outlet::before {
+  display: none;
+}
+
+.width-logo {
+  width: 10em;
+}
+
+.margin-logo {
+  margin: 0;
+}
+
+.container {
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+}
+
+.admin {
+  font-size: 1em;
+}
+
+.item {
+  list-style: none;
+  border-style: solid;
+  box-sizing: content-box;
+  border-radius: 2em;
+  border-color: #ffffff;
+  align-items: center;
+}
+
+.item p {
+  color: #1e272e;
+}
+
+/*****************************************************************/
+/*Section burger*/
+/*****************************************************************/
+#dash::before {
+  display: block;
+}
+
+.burgerSelect {
+  cursor: pointer;
+  display: block;
+  padding-bottom: 1.25em;
+  padding-top: 1.25em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+#content {
+  display: none;
+}
+
+#content.active {
+  display: block;
+}
+
+/**************************************************************************/
+/*Responsive version*/
+/**************************************************************************/
+@media (min-width: 768px) {
+  .profile {
+    display: flex;
+    justify-content: center;
+  }
+  .dashboard-fsize {
+    font-size: 3em;
+  }
+  .content-fsize {
+    font-size: 1.5em;
+    text-decoration: none;
+    color: #ffffff;
+  }
+}
+@font-face {
+  font-family: "Share Tech Mono";
+  src: url("../../fonts/ShareTechMono-Regular.ttf");
+}
+@font-face {
+  font-family: "Fira Code";
+  src: url("../../fonts/FiraCode-VF.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/*Margin*/
+.mt-15 {
+  margin-top: 15%;
+}
+
+.mt-demi {
+  margin-top: 1.5em;
+}
+
+.mbt-demi {
+  margin-bottom: 1.5em;
+}
+
+/*Display*/
+.flex {
+  display: flex;
+}
+
+.block {
+  display: block;
+}
+
+.flex-wr {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*Position an pposition-display*/
+.spc-ard {
+  justify-content: space-around;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+/*Container*/
+.container {
+  color: var(--white-color);
+  margin-right: 1em;
+  margin-left: 1em;
+  text-align: center;
+}
+
+.w-tel {
+  width: 13em;
+}
+
+.del-btn {
+  width: 9em;
+  display: block;
+  background-color: rgba(171, 34, 34, 0.9411764706);
+  border: 1px solid rgba(171, 34, 34, 0.9411764706);
+  border-radius: 1.25rem;
+  font-size: 1.5em;
+  text-align: center;
+  text-decoration: none;
+  color: #fdfefe;
+  padding: 0.5em 1.6em;
+}
+
+.del-btn :hover {
+  color: #e55039;
+  background-color: #fdfefe;
+}
+
+.valid-btn {
+  width: 9em;
+  display: block;
+  background-color: #78e08f;
+  border: 1px solid #78e08f;
+  border-radius: 1.25rem;
+  font-size: 1.5em;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Josefin Sans", "sans-serif";
+  color: #fdfefe;
+  padding: 0.5em 1.6em;
+}
+
+.base-btn {
+  width: 9em;
+  border: 1px solid #1e272e;
+  border-radius: 1.25rem;
+  font-size: 1.5em;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Josefin Sans", "sans-serif";
+  color: #1e272e;
+  padding: 0.5em 1.6em;
+}
+
+.yellow-btn {
+  width: 9em;
+  display: block;
+  background-color: #f6b93b;
+  border: 1px solid #f6b93b;
+  border-radius: 1.25rem;
+  font-size: 1.5em;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Josefin Sans", "sans-serif";
+  color: #1e272e;
+  padding: 0.5em 1.6em;
+}
+
+/*Lessons*//*# sourceMappingURL=index.css.map */
