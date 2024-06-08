@@ -9,7 +9,7 @@ export const AuthContext = createContext()
 export const AuthProvider = ({children}) => {
     
     const [user, setUser] = useState()
-    const [admin, setAdmin] = useState()
+    const [isAdmin, setIsadmin] = useState()
     
     
     const login = async (userData) => {
@@ -17,7 +17,7 @@ export const AuthProvider = ({children}) => {
         
         setUser(userData);
         if(user.role === "admin"){
-            setAdmin(true)
+            setIsadmin(true)
         }
     } 
     
@@ -73,7 +73,7 @@ export const AuthProvider = ({children}) => {
     }
     
     return (
-        <AuthContext.Provider value={{login, logout, user , isLogged , admin}}>
+        <AuthContext.Provider value={{login, logout, user , isLogged , isAdmin}}>
            {children}
         </AuthContext.Provider>
         
