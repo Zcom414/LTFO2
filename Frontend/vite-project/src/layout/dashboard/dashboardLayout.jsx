@@ -7,9 +7,10 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { Outlet } from 'react-router-dom'
 import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUserAstronaut, faGaugeHigh, faUserGroup, faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
+import { faUserAstronaut, faUserGroup, faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
 import { FaRegMessage } from "react-icons/fa6";
 import { GiMonsterGrasp } from "react-icons/gi";
+
 
     
 function DashboardLayout() {
@@ -21,7 +22,6 @@ function DashboardLayout() {
         setDash(document.querySelector('#dash'))
     }, []);
 
-     /*By Jules*/
      useEffect(()=> {
         if (dash) {
             const handleDashClick = () =>{
@@ -45,14 +45,10 @@ function DashboardLayout() {
         burgerSelect: true,
         'p-top-content': true,
         }) 
-
-    //  redirection vers la page d'accueil après connexion
-    const location = useLocation()
-    const navigate = useNavigate()
     //  redirection vers la page d'accueil après connexion
     const from = location.state?.from?.pathname || '/'
 
-/*By Jules*/
+
 
 
     return (

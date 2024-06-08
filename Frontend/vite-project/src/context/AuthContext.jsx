@@ -9,23 +9,25 @@ export const AuthContext = createContext()
 export const AuthProvider = ({children}) => {
     
     const [user, setUser] = useState()
-    const [isAdmin, setIsadmin] = useState()
+    const [isAdmin, setIsAdmin] = useState()
     
     
     const login = async (userData) => {
         localStorage.setItem("token", JSON.stringify(userData.token))
         
         setUser(userData);
-        if(user.role === "admin"){
-            setIsadmin(true)
+
+        if(userData.role === "admin"){
+            setIsAdmin(true)
         }
     } 
     
-    const logout = () => {
-        localStorage.removeItem("token")
-        setUser({})
-        toast.info("You've been disconnected")
-    }
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        setUser(null);
+        setIsAdmin(false);
+        toast.info("You've been disconnected");
+      };
     
   
     // Ce useEffect s'effectue au chargement de l'application ou à chaque rafraichissement manuel
@@ -73,7 +75,7 @@ export const AuthProvider = ({children}) => {
     }
     
     return (
-        <AuthContext.Provider value={{login, logout, user , isLogged , isAdmin}}>
+        <AuthContext.Provider value={{login, handleLogout, user , isLogged , isAdmin}}>
            {children}
         </AuthContext.Provider>
         

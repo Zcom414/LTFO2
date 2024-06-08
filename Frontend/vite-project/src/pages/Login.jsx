@@ -13,7 +13,7 @@ const Login = () => {
   
   // Hook qui permet de récupérer le context
   const auth = useAuth()
-  console.log(useAuth)
+
   const navigate = useNavigate()
   
  const handleChange = (e) =>{
@@ -26,36 +26,23 @@ const Login = () => {
      e.preventDefault();
      
      try {
-         // Sécurité
+          // Sécurité
          
-         const res = await axios.post("http://localhost:9000/api/users/login", formInput , {
-            headers:{
-                'Content-Type': 'application/json'
-            }
-         })
-
-          console.log("Login succsessful", res.data)
-
-        toast.success("Vous êtes bien connecté, vous allez être redirigé.")
-        
-        // auth.login(res.data)
-
-          setTimeout(()=>{
-          navigate("/")
-      },1000)
+          const res = await axios.post("/api/users/login", formInput)
+          console.log(res);
+         toast.success("Vous êtes bien connecté, vous allez être redirigé.")
          
-   console.log(2)
-
-     } catch (e) {
-            //  toast.error(e.response.data.message)
-      if (e.response && e.response.data && e.response.data.messsage) {
-         toast.error(e.response.data.message)
-      } else {
-            console.error("Error during login.", e)
+         auth.login(res.data)
+         
+         setTimeout(()=>{
+             navigate("/")
+         },2000)
+    
+      } catch (e) {
+              toast.error(e.response.data.message)
       }
-     }
-     
- }
+      
+  }
  
  
   return (

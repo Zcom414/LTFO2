@@ -10,7 +10,7 @@ import { useAuth } from '../context/AuthContext';
 function NavBar() {
     const [isSticky, setIsSticky] = useState(false);
     const [icons, setIcons] = useState()
-    const {user , logout , isLogged, admin} = useAuth()
+    const {user , handleLogout , isLogged, isAdmin} = useAuth()
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -30,7 +30,6 @@ function NavBar() {
         handleScroll();
     }, []);
 
-    /*By Jules*/
     useEffect(()=> {
         if (icons) {
             const handleIconsClick = () =>{
@@ -47,14 +46,14 @@ function NavBar() {
         }
     }, [icons]);
     
-    const handleLogout = () => {
-        logout();
+    const logoutAndNavigate = () => {
+        handleLogout();
         navigate("/")
     }
 
     useEffect(()=>{
         console.log('User state in Navabr', user)
-    })
+    }, [user])
 
     const navClasses = classNames({
 
@@ -62,11 +61,6 @@ function NavBar() {
         active : !isSticky, //true + true = true
         'transition-duration-300': isSticky, //false - false = true
         })
-    
-        const isAdmin = () => {
-            return admin ;
-        }
-   
     return (
         <header id="header" className="main-nav-outer"> 
 
@@ -102,7 +96,7 @@ function NavBar() {
                             <NavLink to="/Rundown" activeclassname="active">Rundown</NavLink>
                         </li>
 
-                        {isLogged() && isAdmin() &&(
+                        {isLogged() && isAdmin &&(
                             <li>
                                 <NavLink to="/dashboard" activeclassname="active">
                                 Dashboard
@@ -128,7 +122,7 @@ function NavBar() {
 
                         { isLogged() && (
                             <li>
-                                <button onClick={handleLogout}>Logout</button>
+                                <button onClick={logoutAndNavigate}>Logout</button>
                             </li> )}
                        
                     </ul>
