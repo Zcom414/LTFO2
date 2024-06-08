@@ -50,7 +50,7 @@ const Sleepers = () => {
             <h2 className="title-article">Unique</h2>
             <article className="article-position">
            
-                {sleepers.length > 0 && sleepers.map(sleeper => sleeper.type.unique && (
+                {sleepers.map(sleeper => sleeper.type.unique && (
                 <Link to ={`api/sleeper/${sleepers._id}`}>
                     <SleeperCard key={sleeper._id} type={sleeper.type.unique} />
                     </Link>

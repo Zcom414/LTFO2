@@ -13,6 +13,7 @@ const Login = () => {
   
   // Hook qui permet de récupérer le context
   const auth = useAuth()
+  console.log(useAuth)
   const navigate = useNavigate()
   
  const handleChange = (e) =>{
@@ -41,7 +42,7 @@ const Login = () => {
 
           setTimeout(()=>{
           navigate("/")
-      },2000)
+      },1000)
          
    console.log(2)
 

@@ -1,14 +1,17 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink , useNavigate} from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import classNames from "classnames"
-import "../assets/scss/_navbar.scss"
+import { useAuth } from '../context/AuthContext';
+
 
 function NavBar() {
     const [isSticky, setIsSticky] = useState(false);
     const [icons, setIcons] = useState()
+    const {user , logout , isLogged, admin} = useAuth()
+    const navigate = useNavigate()
 
     useEffect(() => {
         const iconsBurger = document.querySelector('#icons')
@@ -43,6 +46,15 @@ function NavBar() {
             }
         }
     }, [icons]);
+    
+    const handleLogout = () => {
+        logout();
+        navigate("/")
+    }
+
+    useEffect(()=>{
+        console.log('User state in Navabr', user)
+    })
 
     const navClasses = classNames({
 
@@ -50,6 +62,10 @@ function NavBar() {
         active : !isSticky, //true + true = true
         'transition-duration-300': isSticky, //false - false = true
         })
+    
+        const isAdmin = () => {
+            return admin ;
+        }
    
     return (
         <header id="header" className="main-nav-outer"> 
@@ -86,15 +102,35 @@ function NavBar() {
                             <NavLink to="/Rundown" activeclassname="active">Rundown</NavLink>
                         </li>
 
-                        <li>
-                            <NavLink to="/dashboard" activeclassname="active">Dashboard</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/users/register" activeclassname="active">Register</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/users/login" activeclassname="active">Login</NavLink>
-                        </li>
+                        {isLogged() && isAdmin() &&(
+                            <li>
+                                <NavLink to="/dashboard" activeclassname="active">
+                                Dashboard
+                                </NavLink>
+                            </li> )}
+                           
+
+                        {!isLogged() && (
+                            <li>
+                            <NavLink to="/users/register" activeclassname="active">
+                                Register
+                            </NavLink>
+                            </li>  )}
+
+                        {!isLogged() &&(
+                            <li>
+                            <NavLink to="/users/login" activeclassname="active">
+                                Login
+                            </NavLink>
+                            </li> )}
+                                    
+                      
+
+                        { isLogged() && (
+                            <li>
+                                <button onClick={handleLogout}>Logout</button>
+                            </li> )}
+                       
                     </ul>
                     
                     <a className="res-nav_click" href="#">

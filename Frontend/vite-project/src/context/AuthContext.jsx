@@ -4,23 +4,27 @@ import axios from "axios"
 import { token } from "./token"
 
 
-export const AuthContext = createContext(null)
+export const AuthContext = createContext()
 
 export const AuthProvider = ({children}) => {
     
-    const [user, setUser] = useState({})
+    const [user, setUser] = useState()
+    const [admin, setAdmin] = useState()
     
     
-    const login = (userData) => {
+    const login = async (userData) => {
         localStorage.setItem("token", JSON.stringify(userData.token))
         
-        setUser(userData)
-        console.log(userData);
-    }
+        setUser(userData);
+        if(user.role === "admin"){
+            setAdmin(true)
+        }
+    } 
     
     const logout = () => {
         localStorage.removeItem("token")
         setUser({})
+        toast.info("You've been disconnected")
     }
     
   
@@ -64,9 +68,12 @@ export const AuthProvider = ({children}) => {
         
     }, [])
     
+    const isLogged = () =>{
+        return !!user
+    }
     
     return (
-        <AuthContext.Provider value={{login, logout, user}}>
+        <AuthContext.Provider value={{login, logout, user , isLogged , admin}}>
            {children}
         </AuthContext.Provider>
         
